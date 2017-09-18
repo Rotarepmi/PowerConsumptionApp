@@ -1,0 +1,173 @@
+\documentclass[a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{listings}
+
+\title{Komputerowe wspomaganie projektowania inżynierskiego}
+\author{Jakub Mandra}
+\date{semestr letni 2016/2017}
+
+\begin{document}
+
+\begin{figure}
+   \includegraphics[width=12cm]{utp_logo.jpg}
+\end{figure}
+
+\maketitle
+
+\newpage
+
+\section{Menu}
+
+\begin{enumerate}
+    \item Założenia projektu
+    \item Prezentacja aplikacji
+    \item UML dla aplikacji
+    \item Kod źródłowy aplikacji
+    \item Projekt piętra budynku
+\end{enumerate}  
+
+\newpage
+
+\section{Założenia projektu}
+
+{Projekt obejmuje aplikację w dowolnym języku/technologii do obliczania miesięcznego zużycia energii elektrycznej w domu, UML opisujący stworzoną aplikację, projekt jednego piętra dowolnego budynku wykonany w programie AutoCad, oraz dokumentację napisaną w LaTex.}
+
+\section{Prezentacja aplikacji}
+{Do stworzenia kalkulatora zużycia energii elektrycznej w domu użyłem technologii webowych.}
+\newline{Aplikacja została napisana w oparciu o wzorzec projektowy Model-Widok-Kontroler (MVC).}
+\newline{Modelem w mojej aplikacji są objekty przechowujące dane o urządzeniach napisane w JavaScript, widok zbudowany jest w HTML5 oraz CSS3 z zachowaniem responsywności i z wykorzystaniem prekompilatora Sass, a kontrolerem jest skrypt JS napisany przy użyciu AngularJS - frameworku JavaScript.}
+\newline{Dodatkowo aplikacja bazuje na JavaSript`owym serwerze Node.js, który obsługuje rządanie przeglądarki do wczytania templateu i skryptów aplikacji.}
+\\
+\\
+\href{http://power-consumption-app.herokuapp.com/}{http://power-consumption-app.herokuapp.com/}
+\newline{Live preview działającej aplikacji.}
+\\
+\\
+\href{https://github.com/Rotarepmi/Studies/tree/master/Power Consumption App}{https://github.com/Rotarepmi/Studies/tree/master/Power Consumption App}
+\newline{Repozytorium GitHub.}
+
+\begin{figure}[h]
+   \includegraphics[width=12cm]{app_screen.jpg}
+   \caption{Widok aplikacji}
+\end{figure}
+
+\newpage
+
+{Struktura aplikacji:}
+
+\begin{itemize}
+    \item app.json
+    \item package.json
+    \item server.js
+    \item index.html
+    \item view
+    \begin{itemize}
+        \item main.html
+        \item mockup.html
+    \end{itemize}
+    \item js
+    \begin{itemize}
+        \item angular.min.js
+        \item angular-route.min.js
+        \item jquery-3.2.1.min.js
+        \item stickyCtrl.js
+        \item main.js
+    \end{itemize}
+    \item css
+    \begin{itemize}
+        \item style.css
+        \item style.css.map
+    \end{itemize}
+    \item sass
+    \begin{itemize}
+        \item style.sass
+    \end{itemize}
+    \item node-modules
+\end{itemize}
+
+\newpage
+
+\section{UML dla aplikacji}
+
+\begin{figure}[h]
+   \includegraphics[width=10cm]{uml_usecase.jpg}
+\end{figure}
+
+\begin{figure}[h]
+   \includegraphics[width=10cm]{uml_classes.jpg}
+\end{figure}
+
+\newpage
+
+\section{Kod źródłowy aplikacji}
+
+
+\lstinputlisting[basicstyle=\tiny, tabsize=1, caption=server.js]{server.js}
+{Skrypt serwera jest prosty, obsługuje tylko wczytywanie głównego indexu strony. W razie niepowodzenia wysyła do przeglądarki użytkownika błąd o numerze 404 (nie znaleziono pliku).}
+     
+\lstinputlisting[basicstyle=\tiny, tabsize=1, caption=package.json]{package.json}
+{Jest to lista zależności potrzebnych podczas instalowania serwera Node.js. Określamy wersję aplikacji oraz elementy, które mają zostać zainstalowane, repozytorium aplikacji i ścieżkę do skryptu absługującego server.}
+     
+\newpage 
+ 
+\lstinputlisting[basicstyle=\tiny, breaklines= true, tabsize=1, caption=index.html]{index.html}
+{Główny plik HTML, który jest wczytywany do przeglądarki. Jest to niejako model aplikacji. Pozycja startowa, gdzie dopiero później wstrzykiwane są kolejne widoki i skrypty aplikacji.}
+
+\lstinputlisting[basicstyle=\tiny, breaklines= true, tabsize=1, caption=view/main.html]{main.html}
+{Template strony napisany w HTML, zawiera rozwijaną listę i kontenery wyświetlające informacje. Wszsytko obsługiwane przez AngularJS.}
+
+\lstinputlisting[basicstyle=\tiny, breaklines= true, tabsize=1, caption=view/mockup.html]{mockup.html}
+{Template kafelki prezentującej dodane do zestawienia urządzenie. Do inputów podpięte są funkcje Angulara, cały widok aktualizowany jest dynamicznie przy każdej zmianie parametrów urządzeń.}
+
+\lstinputlisting[basicstyle=\tiny, breaklines= true, tabsize=1, caption=sass/style.sass]{style.sass}
+{Style strony napisane w prekompilatorze Sass. Opisują wygląd każdego elementu aplikacji}
+
+\lstinputlisting[basicstyle=\tiny, breaklines= true, tabsize=1, caption=css/style.css]{style.css}
+{Przekompilowane na css style aplikacji, które mogą być odczytywane i interpretowane przez przeglądarkę}
+
+\lstinputlisting[basicstyle=\tiny, breaklines= true, tabsize=1, caption=js/main.js]{main.js}
+{Główny plik js, w którym zawarty jest skrypt aplikacji. \\ \\
+Utworzony jest module Angulara, z potpiętym ngRoute - pozwala na wczytywanie widoków strony bez przeładowania. \\ \\
+routerProvider odpowiedizalny jest za wczytanie templateu strony zawartego pod podaną ścieżką. \\ \\
+dyrektywa addMockup wstrzykuje template do kontenera. \\ \\
+appCtrl - główny kontroler aplikacji, działa na elementach w scopie (czyli elemenatach w kontenerze, do którego jest podpięty kontroler), zawiera: \\ \\
+
+\$scope.kitchenDevs, bathroomDevs, roomDevs i gardenDevs - są to listy obiektów, które reprezentują posegregowane urządzenia, które można dodać do zestawienia kalkulatora (pierwotnie planowałem umieścić je w osobnym pliku .json, jednak nie pozwoliłoby to na przechowywanie wewnątrz obiektów funkcji); \\ \\
+
+\$scope.hideList - funkcja zmienia property display kontenera listy, wywoływana jest po opuszczeniu pola listy przez kursor, zdarzenie obsługiwane jest przez Angular; \\ \\
+
+\$scope.toggleList - jak wyżej, z tymże zdarzeniem jest ng-click; \\ \\
+
+\$scope.addMockup - w widoku wyświetlana jest dynamicznie aktualizowana lista z kafelkami urządzeń, wybranie urządzenia z listy wywołuje niniejszą funkcję, która dodaje template do listy i aktualizuje widok; \\ \\
+
+\$scope.deleteMockup - usuwa z listy template danego urządzenia i aktualizuje widok; \\ \\
+
+\$scope.changeOfValue - funkcja wywoływana za każdym razem, gdy użytkownik zmieni wartość w inpucie urządzenia; \\
+aktualizuje początkowe wartości wylicozne przez funkcje zawarte w obiekcie urządzenia i aktualizuje widok; \\ \\
+
+\$scope.updatePrice - funkcja wywołana tylko w przypadku zmiany ceny za energię ele., aktualizuje widok; \\ \\
+
+funckja updateValues() - funckja anonimowa wywoływana zawsze aby zaktualizować przekalkulowane wartośći zużycia prądu i opłat, zbiera wartości zmeinnych z całej listy urządzeń będących dodanych do widoku;
+}
+
+\newpage 
+
+\section{Projekt piętra budynku}
+
+\begin{figure}[h]
+   \includegraphics[width=12cm]{wymiarowanie.jpg}
+   \caption{Schemat budynku z wymiarowaniem}
+\end{figure}
+
+\newpage
+
+\begin{figure}[h]
+   \includegraphics[width=12cm]{instalacja.jpg}
+   \caption{Schamat budynku z instalacją elektryczną}
+\end{figure}
+
+\end{document}

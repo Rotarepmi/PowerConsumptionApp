@@ -1,0 +1,295 @@
+$bgColor: #5d6cad
+$bodyColor: #fff2f2
+$whiteColor: #ffffff
+$blackColor: #000000
+
+html
+	font-size: 62.5%
+
+*
+	box-sizing: border-box
+
+body
+	font-family: 'Poppins', sans-serif
+	background: $bodyColor
+	
+header
+	text-align: center
+	text-decoration: underline	
+
+	h1
+		font-size: 1rem
+	
+main
+	
+	.top-pannel
+		width: 100%
+		height: 40px
+		background: $bgColor
+		margin-bottom: 10px
+		border-radius: 5px
+	
+		.cost-input
+			min-width: 125px
+			height: 30px
+			margin: 5px
+			padding-right: 5px
+			float: right
+			font-size: 1rem
+			color: $whiteColor
+			display: flex
+			align-items: center
+			
+			label
+				width: 70px
+		
+			input
+				width: 40px
+				font-size: 1rem
+				background: $bgColor
+				color: $whiteColor
+				border: 1px dotted #aaaaaa
+		
+				&::-webkit-inner-spin-button
+					-webkit-appearance: none
+					margin: 0
+		
+				&::-webkit-outer-spin-button
+					-webkit-appearance: none
+					margin: 0
+
+				&::placeholder
+					color: $whiteColor
+		
+		button
+			height: 30px
+			margin: 5px
+			font-size: 1.5rem
+			font-weight: 700
+			background: transparent
+			border: none
+			color: $whiteColor
+			border: 1px dotted $whiteColor
+			border-radius: 5px
+
+			&:hover
+				cursor: pointer
+	
+		ul
+			list-style: none
+			background: $bgColor
+			width: 150px
+			margin: 0
+			padding: 0
+			padding: 5px
+			font-size: 1.4rem
+			color: $whiteColor
+			display: none
+			border-radius: 5px
+			box-shadow: 1px 1px 5px rgba(0,0,0,0.5)
+	
+		ul.dropdown-list
+			position: relative
+			
+			li
+				position: relative
+				border-bottom: 1px dotted
+		
+				&:last-child
+					border: none
+		
+				&:hover
+					background: $whiteColor
+					color: $blackColor
+					cursor: pointer
+		
+				&:hover > ul
+					display: block
+		
+				ul
+					position: absolute
+					right: calc(-100% - 10px)
+					top: -5px
+					
+					li
+						display: block
+		
+	.mockups
+		width: 100%
+	
+		.mockup
+			width: 100%
+			font-size: 1.4rem
+			padding: 5px
+			margin-right: 5px
+			margin-bottom: 5px
+			border-radius: 5px
+			background: $whiteColor
+			box-shadow: 1px 1px 5px rgba(0,0,0,0.5)
+
+			h3
+				margin: 0
+				font-size: 1.4rem
+				display: inline-block
+
+			button
+				color: $blackColor
+				background: transparent
+				border: solid 1px #aaaaaa
+				box-shadow: 1px 1px 3px rgba(0,0,0,0.5)
+				margin-top: 1.5px
+				font-size: 1.4rem
+				float: right
+				transition: 0.2s ease-in
+				font-weight: 700
+				border-radius: 5px
+
+				&:hover
+					cursor: pointer
+					color: $bodyColor
+					background-color: $bgColor
+
+			.row
+				width: 100%
+
+				label
+					display: inline-block
+					width: 55%
+
+				input
+					width: 40px
+					font-size: 1.4rem
+					height: 100%
+					background: $whiteColor
+					border: 1px solid #aaaaaa
+
+				.long-input
+					width: 70px
+		
+	.summary-pannel
+		width: 100%
+		font-size: 1.4rem
+		margin-top: 5px
+
+		.pannel
+			border-radius: 5px
+			padding: 5px
+			margin-bottom: 5px
+			background: $bgColor
+			color: $bodyColor
+			box-shadow: 1px 1px 5px rgba(0,0,0,0.5)
+
+			h2
+				font-size: 1.4rem
+				margin: 0
+
+			p
+				margin: 0
+			
+				span
+					font-weight: 700
+		
+@media (min-width: 768px)
+	
+	html
+		font-size: 75%
+	
+	main
+	
+		.top-pannel
+
+			.cost-input
+				min-width: 155px
+
+				label
+					width: 90px
+
+				input
+					width: 50px
+			
+		.mockups 
+			width: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-wrap: wrap
+
+			.mockup
+				width: 340px
+
+	
+@media (min-width: 1024px)
+	
+	html
+		font-size: 75%
+	
+	header
+		
+		h1
+			font-size: 1.6rem
+	
+	main
+			
+		.top-pannel
+			
+			ul
+				width: 250px
+		
+		.mockups 
+			width: calc(100% - 280px)
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-wrap: wrap
+
+			.mockup
+				width: 340px
+
+		.summary-pannel
+			width: 270px
+			position: fixed
+			right: 10px
+			top: 100px
+	
+@media (min-width: 2560px)
+	
+	html
+		font-size: 100%
+	
+	main
+			
+		.top-pannel
+		
+			.cost-input
+				min-width: 205px
+
+				label
+					width: 110px
+
+				input
+					width: 70px
+		
+			ul
+				width: 250px
+		
+		.mockups 
+			width: calc(100% - 370px)
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-wrap: wrap
+
+			.mockup
+				width: 460px
+
+		.summary-pannel
+			width: 360px
+			position: fixed
+			right: 10px
+			top: 120px
+
+.stickyTopPannel
+	position: fixed
+	width: calc(100% - 16px) !important
+	top: 0
+	

@@ -1,0 +1,22 @@
+{
+  "name": "Power-consuption-app",
+  "version": "0.2.6",
+  "description": "A calculator for power consumption in home",
+  "engines": {
+    "node": "6.10.2"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "express": "4.15.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rotarepmi/Studies/tree/master/Power%20Consumption%20App"
+  },
+  "keywords": [
+    "node",
+		"power consuption",
+    "express"
+  ],
+  "license": "MIT"
+}

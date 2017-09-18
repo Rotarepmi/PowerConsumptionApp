@@ -1,0 +1,73 @@
+<div ng-controller="appCtrl">
+
+	<div class="top-pannel">
+
+		<button ng-click="toggleList()">Dodaj urządzenie</button>
+
+		<div class="cost-input">
+			<label>Cena za 1kWh: </label>
+			<input type="number" ng-model="price" ng-change="updatePrice()"><span>zł</span> 
+		</div>
+
+		<ul class="dropdown-list" ng-mouseleave="hideList()">
+			<li>
+				Kuchnia
+				<ul>
+					<li ng-repeat="kitchenDev in kitchenDevs" ng-click="addMockup(kitchenDev.name, kitchenDev.amount, kitchenDev.power, kitchenDev.hours, kitchenDev.minutes, kitchenDev.dailyUse(), kitchenDev.dailyCost())">
+						{{ kitchenDev.name }}
+					</li>
+				</ul>
+			</li>
+			<li>
+				Łazienka
+				<ul>
+					<li ng-repeat="bathroomDev in bathroomDevs"  ng-click="addMockup(bathroomDev.name, bathroomDev.amount, bathroomDev.power, bathroomDev.hours, bathroomDev.minutes, bathroomDev.dailyUse(), bathroomDev.dailyCost())">
+						{{ bathroomDev.name }}
+					</li>
+				</ul>
+			</li>
+			<li>
+				Pokój
+				<ul>
+					<li ng-repeat="roomDev in roomDevs"  ng-click="addMockup(roomDev.name, roomDev.amount, roomDev.power, roomDev.hours, roomDev.minutes, roomDev.dailyUse(), roomDev.dailyCost())">
+						{{ roomDev.name }}
+					</li>
+				</ul>
+			</li>
+			<li>
+				Ogrzewanie i ogród
+				<ul>
+					<li ng-repeat="gardenDev in gardenDevs"  ng-click="addMockup(gardenDev.name, gardenDev.amount, gardenDev.power, gardenDev.hours, gardenDev.minutes, gardenDev.dailyUse(), gardenDev.dailyCost())">
+						{{ gardenDev.name }}
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+
+	<section class="mockups">
+
+		<!-- tutaj pojawiają się okienka z urządzeniami -->
+		<div add-Mockup ng-repeat="mockup in mockupList track by $index" ng-init='mockupIndex = $index'></div>
+
+	</section>
+
+	<section class="summary-pannel">
+
+		<div class="pannel">
+			<h2>Zużycie energii elektrycznej</h2>
+			<p>Dzienne: <span>{{ dailyUse | number: 3}}</span>kWh</p>
+			<p>Miesięczne: <span>{{ monthlyUse | number: 3}}</span>kWh</p>
+			<p>Roczne: <span>{{ annualUse | number: 3}}</span>kWh</p>
+		</div>
+
+		<div class="pannel">
+			<h2>Wysokość opłat</h2>
+			<p>Miesiąc: <span>{{ monthlyCost | number: 2}}</span>zł</p>
+			<p>Rok: <span>{{ annualCost | number: 2}}</span>zł</p>
+		</div>
+
+	</section>
+
+</div>

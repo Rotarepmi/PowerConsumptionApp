@@ -1,0 +1,24 @@
+<div class="mockup">
+	<h3 class="device-name">{{ mockup.name }}</h3>
+	<button ng-click="deleteMockup(mockupIndex)">Usuń</button>
+	<div style="clear:both"></div>
+
+	<div class="row">
+		<label>Ilość:</label>
+		<input type="number" min="1" ng-model="mockup.amount" ng-change="changeOfValue(mockupIndex)">
+	</div>
+
+	<div class="row">
+		<label>Moc: </label>
+		<input class="long-input" type="number" min="10" ng-model="mockup.power" ng-change="changeOfValue(mockupIndex)"><span>W</span>
+	</div>
+
+	<div class="row">
+		<label>Czas użycia na dobę: </label>
+		<input type="number" max="24" min="0" ng-model="mockup.hours" ng-change="changeOfValue(mockupIndex)"><span>h</span>
+		<input type="number" max="60" min="0" ng-model="mockup.minutes" ng-change="changeOfValue(mockupIndex)"><span>min</span>
+	</div>
+
+	<p>Zużycie dobowe = <span>{{ mockup.dailyUse | number: 3 }}</span>kWh</p>
+	<p>Koszt na dobę = <span>{{ mockup.dailyCost | number: 2 }}</span>zł</p>
+</div>

@@ -1,0 +1,257 @@
+html {
+  font-size: 62.5%; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff2f2; }
+
+header {
+  text-align: center;
+  text-decoration: underline; }
+  header h1 {
+    font-size: 1rem; }
+
+main .top-pannel {
+  width: 100%;
+  height: 40px;
+  background: #5d6cad;
+  margin-bottom: 10px;
+  border-radius: 5px; }
+  main .top-pannel .cost-input {
+    min-width: 125px;
+    height: 30px;
+    margin: 5px;
+    padding-right: 5px;
+    float: right;
+    font-size: 1rem;
+    color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    main .top-pannel .cost-input label {
+      width: 70px; }
+    main .top-pannel .cost-input input {
+      width: 40px;
+      font-size: 1rem;
+      background: #5d6cad;
+      color: #ffffff;
+      border: 1px dotted #aaaaaa; }
+      main .top-pannel .cost-input input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0; }
+      main .top-pannel .cost-input input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0; }
+      main .top-pannel .cost-input input::-webkit-input-placeholder {
+        color: #ffffff; }
+      main .top-pannel .cost-input input:-ms-input-placeholder {
+        color: #ffffff; }
+      main .top-pannel .cost-input input::placeholder {
+        color: #ffffff; }
+  main .top-pannel button {
+    height: 30px;
+    margin: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    border: 1px dotted #ffffff;
+    border-radius: 5px; }
+    main .top-pannel button:hover {
+      cursor: pointer; }
+  main .top-pannel ul {
+    list-style: none;
+    background: #5d6cad;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    padding: 5px;
+    font-size: 1.4rem;
+    color: #ffffff;
+    display: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
+  main .top-pannel ul.dropdown-list {
+    position: relative; }
+    main .top-pannel ul.dropdown-list li {
+      position: relative;
+      border-bottom: 1px dotted; }
+      main .top-pannel ul.dropdown-list li:last-child {
+        border: none; }
+      main .top-pannel ul.dropdown-list li:hover {
+        background: #ffffff;
+        color: #000000;
+        cursor: pointer; }
+      main .top-pannel ul.dropdown-list li:hover > ul {
+        display: block; }
+      main .top-pannel ul.dropdown-list li ul {
+        position: absolute;
+        right: calc(-100% - 10px);
+        top: -5px; }
+        main .top-pannel ul.dropdown-list li ul li {
+          display: block; }
+main .mockups {
+  width: 100%; }
+  main .mockups .mockup {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background: #ffffff;
+    -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
+    main .mockups .mockup h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      display: inline-block; }
+    main .mockups .mockup button {
+      color: #000000;
+      background: transparent;
+      border: solid 1px #aaaaaa;
+      -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      margin-top: 1.5px;
+      font-size: 1.4rem;
+      float: right;
+      -webkit-transition: 0.2s ease-in;
+      transition: 0.2s ease-in;
+      font-weight: 700;
+      border-radius: 5px; }
+      main .mockups .mockup button:hover {
+        cursor: pointer;
+        color: #fff2f2;
+        background-color: #5d6cad; }
+    main .mockups .mockup .row {
+      width: 100%; }
+      main .mockups .mockup .row label {
+        display: inline-block;
+        width: 55%; }
+      main .mockups .mockup .row input {
+        width: 40px;
+        font-size: 1.4rem;
+        height: 100%;
+        background: #ffffff;
+        border: 1px solid #aaaaaa; }
+      main .mockups .mockup .row .long-input {
+        width: 70px; }
+main .summary-pannel {
+  width: 100%;
+  font-size: 1.4rem;
+  margin-top: 5px; }
+  main .summary-pannel .pannel {
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+    background: #5d6cad;
+    color: #fff2f2;
+    -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
+    main .summary-pannel .pannel h2 {
+      font-size: 1.4rem;
+      margin: 0; }
+    main .summary-pannel .pannel p {
+      margin: 0; }
+      main .summary-pannel .pannel p span {
+        font-weight: 700; }
+
+@media (min-width: 768px) {
+  html {
+    font-size: 75%; }
+
+  main .top-pannel .cost-input {
+    min-width: 155px; }
+    main .top-pannel .cost-input label {
+      width: 90px; }
+    main .top-pannel .cost-input input {
+      width: 50px; }
+  main .mockups {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    main .mockups .mockup {
+      width: 340px; } }
+@media (min-width: 1024px) {
+  html {
+    font-size: 75%; }
+
+  header h1 {
+    font-size: 1.6rem; }
+
+  main .top-pannel ul {
+    width: 250px; }
+  main .mockups {
+    width: calc(100% - 280px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    main .mockups .mockup {
+      width: 340px; }
+  main .summary-pannel {
+    width: 270px;
+    position: fixed;
+    right: 10px;
+    top: 100px; } }
+@media (min-width: 2560px) {
+  html {
+    font-size: 100%; }
+
+  main .top-pannel .cost-input {
+    min-width: 205px; }
+    main .top-pannel .cost-input label {
+      width: 110px; }
+    main .top-pannel .cost-input input {
+      width: 70px; }
+  main .top-pannel ul {
+    width: 250px; }
+  main .mockups {
+    width: calc(100% - 370px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    main .mockups .mockup {
+      width: 460px; }
+  main .summary-pannel {
+    width: 360px;
+    position: fixed;
+    right: 10px;
+    top: 120px; } }
+.stickyTopPannel {
+  position: fixed;
+  width: calc(100% - 16px) !important;
+  top: 0; }
